@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taskify</title>
+    <title>NoteItDown</title>
     <link rel="icon" href="./icon.png" />
     <link
       rel="stylesheet"
@@ -14,14 +14,16 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./Taskify.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="container">
       <header class="head">
         <div class="head-div">
-          <a href="#"><i class="fa fa-edit iconClass"></i></a>
-          <span class="heading">Taskify</span>
+          <div class="logo">
+            <a href="#"><i class="fa fa-edit iconClass"></i></a>
+            <span class="heading">NoteItDown</span>
+          </div>
           <div class="search-div">
             <input
               type="search"
@@ -38,7 +40,7 @@
         </div>
       </header>
       <main class="main">
-        <h1 class="head-content">Welcome to Taskify</h1>
+        <h1 class="head-content">Welcome to NoteItDown</h1>
         <div class="main-div">
           <div class="add-content">
             <h2 class="add-head">Add Tasks/Notes</h2>
@@ -51,8 +53,6 @@
                 placeholder="Add a Title"
               />
             </div>
-            <!-- <br /> -->
-            <!-- <br /> -->
             <textarea
               name="textArea"
               id="textArea"
@@ -61,11 +61,8 @@
               placeholder="Add a task/note"
               class="textArea"
             ></textarea>
-            <br />
             <button class="add-button">Add Task</button>
           </div>
-          <br />
-          <!-- <hr /> -->
           <div class="save-div">
             <h2 class="save-head">Saved Tasks/Notes</h2>
             <div class="saved-notes">
@@ -75,11 +72,11 @@
         </div>
       </main>
       <footer class="footer">
-        Liny Mathew
+        Developed & Designed by Liny Mathew
         <br />
         <span>Copyright &copy; 2021 All Rights Reserved </span>
       </footer>
     </div>
-    <script src="./Taskify.js"></script>
+    <script src="./NoteItDown.js"></script>
   </body>
 </html>

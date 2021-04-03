@@ -1,4 +1,4 @@
-console.log("Welcome to Note Making");
+// console.log("Welcome to Note Making");
 display(); //For reloading solution
 
 // To display the notes
@@ -15,6 +15,7 @@ function display() {
   //Template literals used; element being the data in the array, index being its index no.
   //<h4 class="head-note-section">Note ${index + 1}</h4>
   //including title and note as a single object
+
   noteArray.forEach(function (element, index) {
     htmlDisplay =
       htmlDisplay +
@@ -22,6 +23,7 @@ function display() {
           <div class="inside-save-section">
           <h4 class="head-note-section">${element.title}</h4>
           <p class="para-note-section">${element.note}</p>
+          <h6 class="date-section">${element.idate}</h6>
           </div>    
           <button class="delete-button" onclick="deleteNote(${index})">Delete</button>
           </div> `;
@@ -41,6 +43,7 @@ function display() {
 let addNote = document.querySelector(".add-button");
 addNote.addEventListener("click", function (e) {
   //console.log("Let's add note");
+  
   let textField = document.querySelector(".textArea"); //select the textarea
   let textTitle = document.querySelector(".addTitle");
 
@@ -55,9 +58,14 @@ addNote.addEventListener("click", function (e) {
   let notesObject = {
     title: textTitle.value,
     note: textField.value,
+    idate: new Date().toUTCString()
   };
 
-  noteArray.push(notesObject);
+  if(notesObject.title==='' || notesObject.note===""){
+    console.log("Add a note")
+  }else{
+    noteArray.push(notesObject);
+  }
 
   localStorage.setItem("data", JSON.stringify(noteArray));
   textField.value = "";
@@ -65,6 +73,7 @@ addNote.addEventListener("click", function (e) {
   //console.log("Note Added to local storage");
   //console.log(noteArray);
   display(); //Display the note
+
 });
 
 //To delete the note
